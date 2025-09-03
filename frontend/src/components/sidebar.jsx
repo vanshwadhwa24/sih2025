@@ -14,7 +14,7 @@ export default function Sidebar() {
   const [openProjects, setOpenProjects] = useState(false);
 
   return (
-    <div className="h-screen w-64 bg-[#111827] text-gray-300 flex flex-col">
+    <div className="h-screen w-64 bg-[#111827] text-gray-300 flex flex-col fixed">
       {/* Logo */}
       <div className="p-4 flex items-center space-x-2">
         <div className="w-6 h-6 bg-indigo-500 rounded-full"></div>
