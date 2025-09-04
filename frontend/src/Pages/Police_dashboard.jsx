@@ -1,10 +1,15 @@
 import React from "react";
 import { MapPin, AlertCircle, CheckCircle, Users, ClipboardCheck } from "lucide-react";
+import Sidebar from "../components/sidebar";
 
 export default function Dashboard() {
   return (
-    <div className="p-6 grid grid-cols-12 gap-6 bg-[#0f172a] min-h-screen text-white w-screen pl-115">
-    
+    <div className="flex gap-10">
+    <div >
+      <Sidebar/>
+    </div>
+    <div className="p-6 grid grid-cols-12 gap-6 bg-[#0f172a] min-h-screen text-white w-screen ">
+
 
       {/* Main Content */}
       <div className="col-span-10 space-y-6">
@@ -51,7 +56,7 @@ export default function Dashboard() {
               src="/map-heat.png"
               alt="Heatmap"
               className="rounded-xl w-full h-[400px] object-cover"
-            /> */}
+              /> */}
           </div>
 
           <div className="col-span-4 bg-[#1e293b] rounded-2xl shadow-lg p-4 space-y-4">
@@ -100,15 +105,16 @@ export default function Dashboard() {
             </div>
             {/* <p className="mt-2 text-green-400">
               Response Time Trend: Improving
-            </p> */}
+              </p> */}
           </div>
         </div>
-       <button
+       {/* <button
   type="button"
   className="flex items-center justify-center w-24 h-24 text-white bg-red-600 rounded-full hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 text-xl font-bold shadow-lg">
   SOS
-</button> 
+  </button>  */}
       </div>
     </div>
+  </div>
   );
 }
