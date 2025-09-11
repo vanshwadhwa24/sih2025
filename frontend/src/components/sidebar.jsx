@@ -23,13 +23,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
     <>
       {/* Sidebar */}
       <aside
-        className={`fixed left-4 z-40 transition-all duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-        } bg-black/30 backdrop-blur-md rounded-2xl p-4 border border-white/10 shadow-2xl w-48`}
-        style={{
-          top: "calc(4rem + 1rem + 32px)", // navbar height + navbar top margin + larger gap
-          bottom: "16px", // bottom margin to match navbar side margins
-        }}
+        className={` bg-[#222932] border-r border-gray-700 w-56 min-w-[180px] p-4 shadow-sm transition-all duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <div className="flex flex-col h-full">
           {/* Close button for mobile */}
@@ -47,14 +41,14 @@ export default function FloatingSidebar({ isOpen, onClose }) {
                 navigateTo("/dashboard");
                 onClose?.();
               }}
-              className={`flex items-center space-x-3 w-full transition-all duration-200 p-3 rounded-xl hover:scale-105 ${
+              className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
                 currentPath === "/dashboard"
-                  ? "text-white bg-white/20 border border-white/30 scale-105"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? "bg-[#262d36] text-white border border-gray-600"
+                  : "text-gray-300 hover:text-white hover:bg-[#262d36]"
               }`}
             >
               <LayoutDashboard size={20} />
-              <span className="text-sm font-medium">Dashboard</span>
+              <span>Dashboard</span>
             </button>
 
             <button
@@ -62,14 +56,14 @@ export default function FloatingSidebar({ isOpen, onClose }) {
                 navigateTo("/tourist-records");
                 onClose?.();
               }}
-              className={`flex items-center space-x-3 w-full transition-all duration-200 p-3 rounded-xl hover:scale-105 ${
+              className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
                 currentPath === "/tourist-records"
-                  ? "text-white bg-white/20 border border-white/30 scale-105"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? "bg-[#262d36] text-white border border-gray-600"
+                  : "text-gray-300 hover:text-white hover:bg-[#262d36]"
               }`}
             >
               <Users size={20} />
-              <span className="text-sm font-medium">Tourist Records</span>
+              <span>Tourist Records</span>
             </button>
 
             <button
@@ -77,14 +71,14 @@ export default function FloatingSidebar({ isOpen, onClose }) {
                 navigateTo("/alerts");
                 onClose?.();
               }}
-              className={`flex items-center space-x-3 w-full transition-all duration-200 p-3 rounded-xl hover:scale-105 ${
+              className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
                 currentPath === "/alerts"
-                  ? "text-white bg-white/20 border border-white/30 scale-105"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? "bg-[#262d36] text-white border border-gray-600"
+                  : "text-gray-300 hover:text-white hover:bg-[#262d36]"
               }`}
             >
               <AlertTriangle size={20} />
-              <span className="text-sm font-medium">Alerts</span>
+              <span>Alerts</span>
             </button>
 
             <button
@@ -92,14 +86,14 @@ export default function FloatingSidebar({ isOpen, onClose }) {
                 navigateTo("/cases");
                 onClose?.();
               }}
-              className={`flex items-center space-x-3 w-full transition-all duration-200 p-3 rounded-xl hover:scale-105 ${
+              className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
                 currentPath === "/cases"
-                  ? "text-white bg-white/20 border border-white/30 scale-105"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? "bg-[#262d36] text-white border border-gray-600"
+                  : "text-gray-300 hover:text-white hover:bg-[#262d36]"
               }`}
             >
               <Briefcase size={20} />
-              <span className="text-sm font-medium">Cases</span>
+              <span>Cases</span>
             </button>
           </div>
 
@@ -110,8 +104,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
                 navigateTo("/logout");
                 onClose?.();
               }}
-              className="flex items-center justify-center space-x-2 w-full transition-all duration-200 p-3 rounded-xl hover:scale-105 text-white font-medium"
-              style={{ backgroundColor: "#338cd8" }}
+              className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded text-white font-medium bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
             >
               <LogOut size={18} />
               <span className="text-sm">Logout</span>

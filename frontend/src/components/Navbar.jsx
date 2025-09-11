@@ -25,79 +25,56 @@ export default function FullScreenNavbar({ onMenuClick }) {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/40 backdrop-blur-md"
-          : "bg-black/30 backdrop-blur-md"
-      } rounded-2xl border border-white/10 shadow-2xl`}
-    >
-      <div className="px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div
-            className="text-white font-bold text-xl cursor-pointer"
+    <nav className="w-full bg-[#222932] border-b border-gray-700 shadow-sm">
+      <div className="px-6 py-3 flex items-center justify-between">
+        <div className="text-white font-bold text-xl cursor-pointer" onClick={() => navigateTo("/")}>Logo</div>
+        {/* <div className="hidden md:flex items-center space-x-4">
+          <button
             onClick={() => navigateTo("/")}
+            className={`px-3 py-1 rounded text-sm font-medium transition-colors duration-200 ${
+              currentPath === "/"
+                ? "bg-[#262d36] text-white border border-gray-600"
+                : "text-gray-300 hover:text-white hover:bg-[#262d36]"
+            }`}
+          >Home</button>
+          <button
+            onClick={() => navigateTo("/about")}
+            className={`px-3 py-1 rounded text-sm font-medium transition-colors duration-200 ${
+              currentPath === "/about"
+                ? "bg-[#262d36] text-white border border-gray-600"
+                : "text-gray-300 hover:text-white hover:bg-[#262d36]"
+            }`}
+          >About</button>
+          <button
+            onClick={() => navigateTo("/services")}
+            className={`px-3 py-1 rounded text-sm font-medium transition-colors duration-200 ${
+              currentPath === "/services"
+                ? "bg-[#262d36] text-white border border-gray-600"
+                : "text-gray-300 hover:text-white hover:bg-[#262d36]"
+            }`}
+          >Services</button>
+          <button
+            onClick={() => navigateTo("/contact")}
+            className={`px-3 py-1 rounded text-sm font-medium transition-colors duration-200 ${
+              currentPath === "/contact"
+                ? "bg-[#262d36] text-white border border-gray-600"
+                : "text-gray-300 hover:text-white hover:bg-[#262d36]"
+            }`}
+          >Contact</button>
+        </div> */}
+        <div className="flex items-center space-x-2">
+          <button className="text-gray-300 hover:text-white transition-colors duration-200 p-2 rounded hover:bg-[#262d36]">
+            <Search size={20} />
+          </button>
+          <button className="text-gray-300 hover:text-white transition-colors duration-200 p-2 rounded hover:bg-[#262d36]">
+            <Bell size={20} />
+          </button>
+          <button
+            onClick={onMenuClick}
+            className="md:hidden text-gray-300 hover:text-white transition-colors duration-200 p-2 rounded hover:bg-[#262d36]"
           >
-            Logo
-          </div>
-
-          <div className="hidden md:flex items-center space-x-6">
-            <button
-              onClick={() => navigateTo("/")}
-              className={`transition-colors duration-200 px-4 py-2 rounded-lg ${
-                currentPath === "/"
-                  ? "text-white bg-white/20 border border-white/30"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => navigateTo("/about")}
-              className={`transition-colors duration-200 px-4 py-2 rounded-lg ${
-                currentPath === "/about"
-                  ? "text-white bg-white/20 border border-white/30"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              About
-            </button>
-            <button
-              onClick={() => navigateTo("/services")}
-              className={`transition-colors duration-200 px-4 py-2 rounded-lg ${
-                currentPath === "/services"
-                  ? "text-white bg-white/20 border border-white/30"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              Services
-            </button>
-            <button
-              onClick={() => navigateTo("/contact")}
-              className={`transition-colors duration-200 px-4 py-2 rounded-lg ${
-                currentPath === "/contact"
-                  ? "text-white bg-white/20 border border-white/30"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              Contact
-            </button>
-          </div>
-
-          <div className="flex items-center space-x-3">
-            <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10">
-              <Search size={20} />
-            </button>
-            <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10">
-              <Bell size={20} />
-            </button>
-            <button
-              onClick={onMenuClick}
-              className="md:hidden text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-lg hover:bg-white/10"
-            >
-              <Menu size={20} />
-            </button>
-          </div>
+            <Menu size={20} />
+          </button>
         </div>
       </div>
     </nav>

@@ -10,11 +10,9 @@ function App() {
   const location = useLocation();
   return (
     <div>
-      {location.pathname !== '/' && <FloatingNavbar onMenuClick={() => setSidebarOpen(true)} />}
-      <FloatingSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <Routes>
         {/* <Route path="/" element={</>} /> */}
-        <Route path="/dashboard" element={<Police_dashboard />} />
+        <Route path="/" element={<Police_dashboard />} />
         <Route path="/map" element={<Map_dashboard />} />
       </Routes>
     </div>
