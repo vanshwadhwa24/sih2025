@@ -1,25 +1,24 @@
-import { useState } from 'react'
-import { Routes, Route } from "react-router-dom";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Sidebar from "./components/sidebar";
-import HomePagr from './Pages/User_dashboard';
-import Police_dashboard from './Pages/Police_dashboard';
-import Map_dashboard from './Pages/Map_dashboard' ;
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import FloatingSidebar from './components/Sidebar';
+import FloatingNavbar from './components/Navbar';
+import Police_dashboard from "./Pages/Dashboard";
+import Map_dashboard from "./Pages/Map";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
   return (
     <div>
-   
-   <Routes>
-  <Route path="/" element={<user_dashboard />} />
-  <Route path="Police_dashboard" element={<Police_dashboard />} />
-  <Route path ="Map_dashboard" element = {<Map_dashboard />} />
-</Routes>
-    </div>  
-  )
+      {location.pathname !== '/' && <FloatingNavbar onMenuClick={() => setSidebarOpen(true)} />}
+      <FloatingSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Routes>
+        {/* <Route path="/" element={</>} /> */}
+        <Route path="/dashboard" element={<Police_dashboard />} />
+        <Route path="/map" element={<Map_dashboard />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
