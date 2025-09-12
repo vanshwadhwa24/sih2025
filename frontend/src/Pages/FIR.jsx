@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './FIR.css'; // Optional: for custom styles
+import './FIR.css'; 
 import FloatingSidebar from '../components/Sidebar';
 
 const FIR = () => {
@@ -23,7 +23,6 @@ const FIR = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Add API call to submit FIR
     setSubmitted(true);
   };
 
