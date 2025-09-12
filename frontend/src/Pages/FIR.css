@@ -1,0 +1,104 @@
+.fir-root-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #181f2a;
+}
+.fir-sidebar {
+  width: 220px;
+  min-width: 180px;
+  background: #222932;
+  border-right: 1px solid #374151;
+  z-index: 10;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.fir-main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #262d36;
+}
+.fir-form-container {
+  background: #222932;
+  color: #fff;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.fir-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.fir-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+.fir-form input,
+.fir-form textarea,
+.fir-form input,
+.fir-form select {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444;
+  background: #262d36;
+  color: #fff;
+  font-size: 1rem;
+}
+.fir-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23cbd5e1' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+.fir-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.submit-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+.success-message {
+  color: #22c55e;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  background: #222932;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
