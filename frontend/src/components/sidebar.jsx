@@ -6,19 +6,13 @@ import {
   X,
   LogOut,
 } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-// For demonstration - replace with your actual navigation logic
-const navigateTo = (path) => {
-  console.log(`Navigating to: ${path}`);
-  // Replace with your router navigation
-  // For Next.js: router.push(path)
-  // For React Router: navigate(path)
-};
 
 export default function FloatingSidebar({ isOpen, onClose }) {
   const location = useLocation();
   const currentPath = location.pathname;
+  const navigate = useNavigate();
   return (
     <>
       {/* Sidebar */}
@@ -38,7 +32,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
           <div className="flex flex-col space-y-3 flex-1">
             <button
               onClick={() => {
-                navigateTo("/dashboard");
+                navigate("/dashboard");
                 onClose?.();
               }}
               className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
@@ -53,7 +47,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
 
             <button
               onClick={() => {
-                navigateTo("/tourist-records");
+                navigate("/tourist-records");
                 onClose?.();
               }}
               className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
@@ -68,7 +62,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
 
             <button
               onClick={() => {
-                navigateTo("/alerts");
+                navigate("/alerts");
                 onClose?.();
               }}
               className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
@@ -83,7 +77,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
 
             <button
               onClick={() => {
-                navigateTo("/cases");
+                navigate("/cases");
                 onClose?.();
               }}
               className={`flex items-center gap-3 w-full px-3 py-2 rounded text-sm font-medium transition-colors duration-200 ${
@@ -93,7 +87,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
               }`}
             >
               <Briefcase size={20} />
-              <span>Cases</span>
+              <span>FIR</span>
             </button>
           </div>
 
@@ -101,7 +95,7 @@ export default function FloatingSidebar({ isOpen, onClose }) {
           <div className="mt-6 mb-2">
             <button
               onClick={() => {
-                navigateTo("/logout");
+                navigate("/logout");
                 onClose?.();
               }}
               className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded text-white font-medium bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
